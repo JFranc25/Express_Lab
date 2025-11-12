@@ -8,7 +8,10 @@ router.get('/', (req, res)=> {
     res.send('User List');
 });
 router.get('/new', (req, res)=>{
-    res.send('New User Form')
+    res.send('New User Form');
+});
+router.post(`/`, (req, res)=>{
+    
 });
 
 ///router.route.get(`/:id`,(req, res)=>{
@@ -21,6 +24,10 @@ res.send(`Deleting User data for id: ${req.params.id}`);
 }).put((req, res)=>{
 res.send(`Updating User data for id: ${req.params.id}`);
 });
+
+const users =[{name:"Josh", role:"admin"},
+    {name:"Destiny", role:"user"}
+];
 
 router.param("id", (req, res, next, id)=>{
 console.log(`Accessing user #${id}`);
